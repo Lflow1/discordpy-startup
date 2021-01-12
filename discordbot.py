@@ -23,7 +23,7 @@ async def inu(ctx):
 
 @bot.command()
 async def poll(ctx):
-    await ctx.add_reaction(👍)
+    ctx.add_reaction(👍)
     await ctx.send('[参加]\n[不参加]\n[未定]\n[未回答]')
    
     
