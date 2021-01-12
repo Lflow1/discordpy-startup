@@ -24,7 +24,7 @@ async def inu(ctx):
 @bot.command()
 async def poll(ctx):
 
-    await ctx.send('[参加]\n[不参加]\n[未定]\n[未回答]')
-    await message.add_reaction('👍')
+    poll_message = await ctx.send('[参加]\n[不参加]\n[未定]\n[未回答]')
+    await poll_message.add_reaction('👍')
     
 bot.run(token)
