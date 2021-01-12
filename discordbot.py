@@ -4,8 +4,6 @@ import traceback
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-def __init__(self, bot):
-     self.bot = bot
 
 
 @bot.event
@@ -28,28 +26,8 @@ async def inu(ctx):
 async def tem(ctx):
     await ctx.send('ワンワン')
 
-    @commands.command(pass_context=True)
-    async def quickpoll(self, ctx, question, *options: str):
-        if len(options) <= 1:
-            await self.bot.say('You need more than one option to make a poll!')
-            return
-        if len(options) > 10:
-            await self.bot.say('You cannot make a poll for more than 10 things!')
-            return
-
-        if len(options) == 2 and options[0] == 'yes' and options[1] == 'no':
-            reactions = ['✅', '❌']
-        else:
-            reactions = ['1⃣', '2⃣', '3⃣', '4⃣', '5⃣', '6⃣', '7⃣', '8⃣', '9⃣', '🔟']
-
-        description = []
-        for x, option in enumerate(options):
-            description += '\n {} {}'.format(reactions[x], option)
-        embed = discord.Embed(title=question, description=''.join(description))
-        react_message = await self.bot.say(embed=embed)
-        for reaction in reactions[:len(options)]:
-            await self.bot.add_reaction(react_message, reaction)
-        embed.set_footer(text='Poll ID: {}'.format(react_message.id))
-        await self.bot.edit_message(react_message, embed=embed)
+@bot.command()
+async def poll(ctx)
+    await ctx.send('[参加]\n[不参加]\n[未定]\n[未回答]')
     
 bot.run(token)
