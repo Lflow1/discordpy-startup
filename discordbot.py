@@ -21,13 +21,8 @@ async def ping(ctx):
 async def inu(ctx):
     await ctx.send('ワンワン')
 
-
 @bot.command()
-async def tem(ctx):
-    await ctx.send('ワンワン')
-
-@bot.command()
-async def poll(ctx)
+async def poll(ctx):
     await ctx.send('[参加]\n[不参加]\n[未定]\n[未回答]')
     
 bot.run(token)
